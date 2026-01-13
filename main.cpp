@@ -32,6 +32,14 @@ void konversiSatuanBerat(){
             cout << "======================================" << endl;
             cout << "Pilih: ";
             cin >> pilih;
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "\nInput harus berupa angka!" << endl;
+                system("pause");
+                continue;
+            }
     
             if (pilih >= 1 && pilih <= 10) {
                 break;
@@ -49,24 +57,55 @@ void konversiSatuanBerat(){
         int tujuanKonversi[9];
 
         if (pilih == 1){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai * 10;
@@ -88,24 +127,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 2){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 10;
@@ -127,24 +197,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 3){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 1000;
@@ -166,24 +267,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 4){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 10000;
@@ -205,24 +337,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 5){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 100000;
@@ -244,24 +407,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 6){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 1000000;
@@ -283,24 +477,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 7){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 10000000;
@@ -322,24 +547,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 8){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 1000000000;
@@ -361,24 +617,55 @@ void konversiSatuanBerat(){
 
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         } else if (pilih == 9){
-            cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanBerat[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 8; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanBerat[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 8) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanBerat[pilihIndex] << " untuk dikonversi ke " << menuSatuanBerat[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 1000000000;
@@ -401,12 +688,21 @@ void konversiSatuanBerat(){
             cout << nilai << " " << menuSatuanBerat[pilih - 1] << " = " << hasil << " " << menuSatuanBerat[indexTujuan] << endl;
         }
 
-        cout << "Ulangi konversi?(y/t): ";
-        cin >> ulang;
+        while(true){
+            cout << "Ulangi konversi?(y/t): ";
+            cin >> ulang;
+
+            if (ulang == 't' || ulang == 'T' || ulang ==  'y' || ulang == 'Y'){
+                break;
+            } else {
+                cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                system("pause");
+            }
+        }
 
         if (ulang == 't' || ulang == 'T'){
             exit(0); 
-        }
+        } 
 
     } while (ulang ==  'y' || ulang == 'Y');
 }
@@ -440,6 +736,14 @@ void konversiSatuanPanjang(){
             cout << "======================================" << endl;
             cout << "Pilih: ";
             cin >> pilih;
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "\nInput harus berupa angka!" << endl;
+                system("pause");
+                continue;
+            }
     
             if (pilih >= 1 && pilih <= 8) {
                 break;
@@ -454,27 +758,59 @@ void konversiSatuanPanjang(){
         }
 
         int pilihIndex = pilih - 1;
-        int tujuanKonversi[9];
+        int tujuanKonversi[7];
 
         if (pilih == 1){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai * 10;
@@ -492,24 +828,56 @@ void konversiSatuanPanjang(){
 
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         } else if (pilih == 2){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 10;
@@ -527,24 +895,56 @@ void konversiSatuanPanjang(){
 
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         } else if (pilih == 3){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 100;
@@ -562,24 +962,56 @@ void konversiSatuanPanjang(){
 
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         } else if (pilih == 4){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 1000;
@@ -597,24 +1029,56 @@ void konversiSatuanPanjang(){
 
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         } else if (pilih == 5){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 10000;
@@ -632,24 +1096,56 @@ void konversiSatuanPanjang(){
 
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         } else if (pilih == 6){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 100000;
@@ -667,24 +1163,56 @@ void konversiSatuanPanjang(){
 
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         } else if (pilih == 7){
-            cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 8; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+                cout << "\n" << menuSatuanPanjang[pilih - 1] << " dikoversi ke: " << endl;
+                
+                int nomor = 0;
+                for (int i = 0; i <= 6; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSatuanPanjang[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 6) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSatuanPanjang[pilihIndex] << " untuk dikonversi ke " << menuSatuanPanjang[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
 
             if (pilihKonversi == 1){
                 hasil = nilai / 1000000;
@@ -703,8 +1231,17 @@ void konversiSatuanPanjang(){
             cout << nilai << " " << menuSatuanPanjang[pilih - 1] << " = " << hasil << " " << menuSatuanPanjang[indexTujuan] << endl;
         }
 
-        cout << "Ulangi konversi?(y/t): ";
-        cin >> ulang;
+        while(true){
+            cout << "Ulangi konversi?(y/t): ";
+            cin >> ulang;
+
+            if (ulang == 't' || ulang == 'T' || ulang ==  'y' || ulang == 'Y'){
+                break;
+            } else {
+                cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                system("pause");
+            }
+        }
 
         if (ulang == 't' || ulang == 'T'){
             exit(0); 
@@ -738,6 +1275,14 @@ void konversiSuhu(){
             cout << "======================================" << endl;
             cout << "Pilih: ";
             cin >> pilih;
+
+            if (cin.fail()) {
+                cin.clear();
+                cin.ignore(1000, '\n');
+                cout << "\nInput harus berupa angka!" << endl;
+                system("pause");
+                continue;
+            }
     
             if (pilih >= 1 && pilih <= 4) {
                 break;
@@ -755,24 +1300,55 @@ void konversiSuhu(){
         int tujuanKonversi[3];
         
         if (pilih == 1){
-            cout << "\n" << menuSuhu[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 2; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+
+                int nomor = 0;
+                cout << "\n" << menuSuhu[pilih - 1] << " dikoversi ke: " << endl;
+                for (int i = 0; i <= 2; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSuhu[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSuhu[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 2) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSuhu[pilihIndex] << " untuk dikonversi ke " << menuSuhu[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSuhu[pilihIndex] << " untuk dikonversi ke " << menuSuhu[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
     
             if (pilihKonversi == 1){
                 hasil = (nilai * 9 / 5) + 32;
@@ -783,24 +1359,55 @@ void konversiSuhu(){
             cout << nilai << " " << menuSuhu[pilih - 1] << " = " << hasil << " " << menuSuhu[indexTujuan] << endl;
 
         } if (pilih == 2){
-            cout << "\n" << menuSuhu[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 2; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+
+                int nomor = 0;
+                cout << "\n" << menuSuhu[pilih - 1] << " dikoversi ke: " << endl;
+                for (int i = 0; i <= 2; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSuhu[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSuhu[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 2) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSuhu[pilihIndex] << " untuk dikonversi ke " << menuSuhu[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSuhu[pilihIndex] << " untuk dikonversi ke " << menuSuhu[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
     
             if (pilihKonversi == 1){
                 hasil = (nilai - 32) * 5 / 9;
@@ -810,24 +1417,55 @@ void konversiSuhu(){
     
             cout << nilai << " " << menuSuhu[pilih - 1] << " = " << hasil << " " << menuSuhu[indexTujuan] << endl;
         } if (pilih == 3){
-            cout << "\n" << menuSuhu[pilih - 1] << " dikoversi ke: " << endl;
-            
-            int nomor = 0;
-            for (int i = 0; i <= 2; i++){
-                if (i == pilihIndex){
+            while(true){
+                system("cls");
+
+                int nomor = 0;
+                cout << "\n" << menuSuhu[pilih - 1] << " dikoversi ke: " << endl;
+                for (int i = 0; i <= 2; i++){
+                    if (i == pilihIndex){
+                        continue;
+                    }
+                    
+                    cout << nomor + 1 << ". " << menuSuhu[i] << endl;
+                    tujuanKonversi[nomor] = i;
+                    nomor++;
+                }
+                cout << "Pilih: ";
+                cin >> pilihKonversi;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
                     continue;
                 }
-                
-                cout << nomor + 1 << ". " << menuSuhu[i] << endl;
-                tujuanKonversi[nomor] = i;
-                nomor++;
+
+                if (pilihKonversi >= 1 && pilihKonversi <= 2) {
+                    break;
+                } else {
+                    cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                    system("pause");
+                }
             }
-            cout << "Pilih: ";
-            cin >> pilihKonversi;
     
             int indexTujuan = tujuanKonversi[pilihKonversi - 1];
-            cout << "\nMasukkan jumlah nilai " << menuSuhu[pilihIndex] << " untuk dikonversi ke " << menuSuhu[indexTujuan] << ": ";
-            cin >> nilai;
+
+            while(true){
+                cout << "\nMasukkan jumlah nilai " << menuSuhu[pilihIndex] << " untuk dikonversi ke " << menuSuhu[indexTujuan] << ": ";
+                cin >> nilai;
+
+                if (cin.fail()) {
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    cout << "\nInput harus berupa angka!" << endl;
+                    system("pause");
+                    continue;
+                } else {
+                    break;
+                }
+            }
     
             if (pilihKonversi == 1){
                 hasil = nilai - 273.15;
@@ -838,8 +1476,17 @@ void konversiSuhu(){
             cout << nilai << " " << menuSuhu[pilih - 1] << " = " << hasil << " " << menuSuhu[indexTujuan] << endl;
         }
 
-        cout << "Ulangi konversi?(y/t): ";
-        cin >> ulang;
+        while(true){
+            cout << "Ulangi konversi?(y/t): ";
+            cin >> ulang;
+
+            if (ulang == 't' || ulang == 'T' || ulang ==  'y' || ulang == 'Y'){
+                break;
+            } else {
+                cout << "\nPilihan tidak tersedia! Mohon masukan pilihan yang benar" << endl;
+                system("pause");
+            }
+        }
 
         if (ulang == 't' || ulang == 'T'){
             exit(0); 
@@ -863,6 +1510,14 @@ void mainMenu(){
         cout << "======================================" << endl;
         cout << "Pilih: ";
         cin >> pilihMenu;
+
+        if (cin.fail()) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cout << "\nInput harus berupa angka!" << endl;
+            system("pause");
+            continue;
+        }
 
         if (pilihMenu == 1) {
             system("cls");
